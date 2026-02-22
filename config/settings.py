@@ -32,8 +32,10 @@ SECRET_KEY = os.environ.get("SECRET_KEY", "dev-secret-key")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.environ.get("DEBUG", "True") == "True"
 
-ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS", "127.0.0.1,localhost").split(",")
-
+ALLOWED_HOSTS = [h.strip() for h in os.environ.get(
+    "ALLOWED_HOSTS",
+    "127.0.0.1,localhost,document-validation-api.onrender.com"
+).split(",") if h.strip()]
 
 # Application definition
 
