@@ -64,7 +64,9 @@ pip install django djangorestframework djangorestframework-simplejwt drf-spectac
 python manage.py migrate
 ```
 
-### 6. Crear usuarios de prueba
+### 6. Usuarios de prueba
+
+En entorno local puedes crear usuarios manualmente:
 
 ```bash
 python manage.py createsuperuser
@@ -83,8 +85,14 @@ Usuario secundario (para pruebas de ownership):
 username: demo2
 password: demo212345
 ```
+En entorno desplegado (Render), los usuarios demo se crean automáticamente al iniciar el servicio:
+
+- username: demo password: demo12345
+
+- username: demo2 password: demo212345
 
 ---
+
 
 ## Ejecutar servidor
 
@@ -232,9 +240,12 @@ Se incluyen pruebas para:
 ## Limitaciones
 
 - Solo se soporta extracción de RFC desde archivos `.xlsx`
-- No se almacena el archivo de forma persistente
-- No se implementan refresh tokens
-- No se incluyen endpoints de update/delete (fuera del alcance solicitado)
+- No se almacena el archivo de forma persistente.
+- No se implementan refresh tokens.
+- No se incluyen endpoints de update/delete (fuera del alcance solicitado).
+- En el entorno desplegado (Render Free) la base de datos no es persistente.
+- Los datos pueden perderse si la instancia se reinicia.
+- Los usuarios demo se recrean automáticamente en cada inicio del servicio.
 
 ---
 
