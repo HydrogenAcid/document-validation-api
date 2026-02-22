@@ -241,3 +241,11 @@ Se incluyen pruebas para:
 ## Estado
 
 La solución cumple con los requisitos funcionales y de calidad solicitados: autenticación JWT, protección de rutas, separación de responsabilidades, endpoints consistentes, manejo uniforme de errores, paginación y búsqueda, ownership, pruebas mínimas y documentación Swagger.
+
+## Deploy
+
+URL desplegada:
+https://document-validation-api.onrender.com
+
+Swagger:
+https://document-validation-api.onrender.com/api/docs/
