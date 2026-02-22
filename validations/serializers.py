@@ -17,3 +17,5 @@ class ValidationDetailSerializer(serializers.ModelSerializer):
             "created_at"
             ]
         
+class ValidationUploadSerializer(serializers.Serializer):
+    file = serializers.FileField(use_url=False)
